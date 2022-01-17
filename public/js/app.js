@@ -5266,9 +5266,26 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    console.log('Component 2 mounted.');
+  data: function data() {
+    return {
+      show: false
+    };
+  },
+  methods: {
+    toggle: function toggle() {
+      this.show = !this.show;
+    }
   }
 });
 
@@ -5297,9 +5314,22 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
+  data: function data() {
+    return {
+      items: ["first"]
+    };
+  },
+  methods: {
+    addItem: function addItem() {
+      this.items.push("another");
+    }
   }
 });
 
@@ -27985,7 +28015,20 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("This is another component")])
+  return _c("div", { staticStyle: { width: "400px", border: "solid 2px" } }, [
+    _c("h2", [_vm._v("This is another Component")]),
+    _vm._v(" "),
+    _c(
+      "button",
+      { on: { click: _vm.toggle } },
+      [_vm.show ? [_vm._v("Hide")] : [_vm._v("Show")]],
+      2
+    ),
+    _vm._v(" "),
+    _c("div", [
+      _vm.show ? _c("strong", [_vm._v("Now you see me!")]) : _vm._e(),
+    ]),
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -28010,26 +28053,44 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
+  return _c(
+    "div",
+    {
+      staticClass: "container",
+      staticStyle: { width: "400px", border: "solid 2px" },
+    },
+    [
       _c("div", { staticClass: "row justify-content-center" }, [
         _c("div", { staticClass: "col-md-8" }, [
           _c("div", { staticClass: "card" }, [
             _c("div", { staticClass: "card-header" }, [
               _vm._v("Example Component"),
             ]),
+            _vm._v(" "),
+            _c("button", { on: { click: _vm.addItem } }, [
+              _vm._v("Click me to add item"),
+            ]),
+            _vm._v(" "),
+            _c(
+              "ol",
+              _vm._l(_vm.items, function (item, index) {
+                return _c("li", { key: index }, [
+                  _vm._v(
+                    "\n                        " +
+                      _vm._s(item) +
+                      "\n                    "
+                  ),
+                ])
+              }),
+              0
+            ),
           ]),
         ]),
       ]),
-    ])
-  },
-]
+    ]
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

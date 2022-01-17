@@ -23,7 +23,9 @@
     <body>
         <div id="app">
             <example-component></example-component>
-            <div>Regular HTML</div>
+            <div>
+                <p>This is just regular blade template html stuff between 2 components</p>
+            </div>
             <another-component></another-component>
         </div>
     </body>
