@@ -26,7 +26,7 @@
             <div>
                 <p>This is just regular blade template html stuff between 2 components</p>
             </div>
-            <another-component></another-component>
+            <modal-component></modal-component>
         </div>
     </body>
     <script src="{{ asset('js/app.js') }}" defer></script>
